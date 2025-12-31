@@ -24,15 +24,18 @@ resource "aws_db_subnet_group" "this" {
 }
 
 resource "aws_db_instance" "mysql" {
-  identifier             = "${var.name}-mysql"
-  engine                 = "mysql"
-  engine_version         = var.mysql_engine_version
-  instance_class         = var.db_instance_class
-  allocated_storage      = var.db_allocated_storage
+  identifier        = "${var.name}-mysql"
+  engine            = "mysql"
+
+  engine_version    = var.mysql_engine_version
+  instance_class    = var.db_instance_class
+  allocated_storage = var.db_allocated_storage
+
   username               = var.db_username
   password               = var.db_password
   db_subnet_group_name   = aws_db_subnet_group.this.name
   vpc_security_group_ids = [aws_security_group.mysql.id]
-  skip_final_snapshot    = true
-  publicly_accessible    = false
+
+  skip_final_snapshot = true
+  publicly_accessible = false
 }
