@@ -17,7 +17,7 @@ variable "allowed_cidrs" {
 
 variable "mysql_engine_version" {
   type    = string
-  default = "8.0.35"
+  default = "8.0.34"
 }
 
 variable "db_instance_class" {
