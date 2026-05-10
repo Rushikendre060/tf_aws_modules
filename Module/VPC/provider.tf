@@ -1,13 +1,13 @@
 # Terraform configuration block
 terraform {
 
-  # Required providers
+  # Required providers for this module
   required_providers {
 
-    # AWS provider
-    aws {
+    # AWS provider configuration
+    aws = {
 
-      # Provider source
+      # Provider source from HashiCorp registry
       source = "hashicorp/aws"
 
       # AWS provider version
@@ -16,9 +16,9 @@ terraform {
   }
 }
 
-# AWS provider configuration
+# AWS provider block
 provider "aws" {
 
-  # AWS region
+  # AWS region where infrastructure will be created
   region = "ap-south-1"
 }

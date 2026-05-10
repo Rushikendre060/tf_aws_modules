@@ -5,7 +5,7 @@ terraform {
   required_providers {
 
     # AWS provider configuration
-    aws {
+    aws = {
 
       # Provider source from HashiCorp registry
       source = "hashicorp/aws"
